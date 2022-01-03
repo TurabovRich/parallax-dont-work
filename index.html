@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Training</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section>
+        <img class="layer" data-speed="-5" src="./img/1.png" alt="">
+        <img class="layer" data-speed="5" src="./img/2.png" alt="">
+        <img class="layer" data-speed="2" src="./img/3.png" alt="">
+        <img class="layer" data-speed="6" src="./img/4.png" alt="">
+        <img class="layer" data-speed="8" src="./img/5.png" alt="">
+        <img class="layer" data-speed="-2" src="./img/6.png" alt="">
+        <img class="layer" data-speed="4" src="./img/7.png" alt="">
+        <img class="layer" data-speed="-9" src="./img/8.png" alt="">
+        <img class="layer" data-speed="6" src="./img/9.png" alt="">
+        <img class="layer" data-speed="-7" src="./img/10.png" alt="">
+        <img class="layer" data-speed="-5" src="./img/11.png" alt="">
+        <img class="layer" data-speed="5" src="./img/12.png" alt="">
+        <h2 class="layer" data-speed="2">Parallax</h2>
+    </section>
+    <script src="./script.js" type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (window.innerWidth - e.pageX*speed)
+                const y = (window.innerHeight - e.pageY*speed)
+
+                layer.style.transform = 'translateX(${x}px) translateY(${y}px)'
+            });
+        }
+    </script>
+</body>
+
+</html>
